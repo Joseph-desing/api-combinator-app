@@ -1,0 +1,7 @@
+{
+  "name": "api-combinator-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
