@@ -64,7 +64,7 @@ export class ApiViewPage implements OnInit {
       }
     } catch (err) {
       console.error('Error al cargar APIs:', err);
-      this.data = { jokes: ['Error al obtener datos 😢'] };
+      this.data = { jokes: ['Error al obtener datos '] };
     }
 
     this.loading = false;

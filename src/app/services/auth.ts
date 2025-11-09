@@ -35,7 +35,6 @@ export class AuthService {
     }
   }
 
-  // Iniciar sesión
   async login(email: string, password: string) {
     try {
       const credential = await signInWithEmailAndPassword(
