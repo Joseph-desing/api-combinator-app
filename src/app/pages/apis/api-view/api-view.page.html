@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/menu"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Vista API</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div *ngIf="loading" class="loading">
+    <ion-spinner></ion-spinner>
+    <p>Cargando datos...</p>
+  </div>
+
+  <div *ngIf="!loading">
+    <div *ngIf="data.jokes?.length > 0">
+      <h2>Chistes del día :D</h2>
+      <ion-card *ngFor="let joke of data.jokes; let i = index">
+        <ion-card-header>
+          <ion-card-title>Chiste #{{ i + 1 }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          {{ joke }}
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+    <div *ngIf="data.cats?.length > 0">
+      <h2>Galería de Gatos 🐱</h2>
+      <div class="image-grid">
+        <div class="image-item" *ngFor="let cat of data.cats; let i = index">
+          <img [src]="cat" [alt]="'Gato ' + (i + 1)" />
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="data.dogs?.length > 0">
+      <h2>Galería de Perros 🐶</h2>
+      <div class="image-grid">
+        <div class="image-item" *ngFor="let dog of data.dogs; let i = index">
+          <img [src]="dog" [alt]="'Perro ' + (i + 1)" />
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="type === 'mix'">
+      <div *ngIf="data.joke">
+        <h2>Chiste :D</h2>
+        <ion-card>
+          <ion-card-content>
+            {{ data.joke }}
+          </ion-card-content>
+        </ion-card>
+      </div>
+
+      <!-- Gato y Perro en Grid -->
+      <h2>Mascotas </h2>
+      <div class="image-grid">
+        <div class="image-item" *ngIf="data.cat">
+          <img [src]="data.cat" alt="Gato" />
+          <div class="image-label">Gato</div>
+        </div>
+        <div class="image-item" *ngIf="data.dog">
+          <img [src]="data.dog" alt="Perro" />
+          <div class="image-label">Perro</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ion-button expand="block" routerLink="/menu" color="danger">
+    <ion-icon name="arrow-back-outline" slot="start"></ion-icon>
+    Volver al menú
+  </ion-button>
+</ion-content>

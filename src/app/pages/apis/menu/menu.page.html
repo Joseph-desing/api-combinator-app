@@ -1,0 +1,56 @@
+<ion-header translucent>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">🌐 Explorar APIs</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding menu-content">
+  <div class="menu-container">
+
+    <ion-card button (click)="openApi('joke')" class="api-card joke">
+      <ion-card-header>
+        <ion-icon name="happy-outline"></ion-icon>
+        <ion-card-title>Chistes Aleatorios</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Ríe un poco con chistes al azar en español 
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card button (click)="openApi('cat')" class="api-card cat">
+      <ion-card-header>
+        <ion-icon name="paw-outline"></ion-icon>
+        <ion-card-title>Fotos de Gatos</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Mira a los adorables gatitos
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card button (click)="openApi('dog')" class="api-card dog">
+      <ion-card-header>
+        <ion-icon name="paw"></ion-icon>
+        <ion-card-title>Fotos de Perros</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Mira a los perritos
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card button (click)="openApi('mix')" class="api-card mix">
+      <ion-card-header>
+        <ion-icon name="planet-outline"></ion-icon>
+        <ion-card-title>Modo Combinado</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        ¡Un chiste, un gato y un perro en un solo clic! 
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+
+  <ion-button expand="block" color="danger" (click)="logout()" class="logout-button">
+    <ion-icon name="log-out-outline" slot="start"></ion-icon>
+    Cerrar Sesión
+  </ion-button>
+</ion-content>

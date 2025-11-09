@@ -1,0 +1,75 @@
+.menu-content {
+  --background: linear-gradient(180deg, #f0f8ff 0%, #ffffff 100%);
+}
+
+.menu-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 16px;
+  padding-bottom: 40px;
+}
+
+.api-card {
+  text-align: center;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  ion-icon {
+    font-size: 48px;
+    color: var(--ion-color-primary);
+  }
+
+  ion-card-title {
+    font-size: 1.2rem;
+    margin-top: 4px;
+    font-weight: 600;
+  }
+
+  ion-card-content {
+    font-size: 0.95rem;
+    color: #000000;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.api-card.joke {
+  background: #fff7e6;
+  
+  ion-card-title {
+    color: #ff9800; // 👈 Naranja para Chistes
+  }
+}
+
+.api-card.cat {
+  background: #f9f5ff;
+  
+  ion-card-title {
+    color: #9c27b0; // 👈 Morado para Gatos
+  }
+}
+
+.api-card.dog {
+  background: #e6f7ff;
+  
+  ion-card-title {
+    color: #2196f3; // 👈 Azul para Perros
+  }
+}
+
+.api-card.mix {
+  background: #e8ffe8;
+  
+  ion-card-title {
+    color: #4caf50; // 👈 Verde para Combinado
+  }
+}
+
+.logout-button {
+  margin-top: 20px;
+  border-radius: 12px;
+}

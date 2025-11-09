@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h1>¡Bienvenido!</h1>
+  <p><strong>Usuario:</strong> {{ userEmail }}</p>
+  
+  <ion-button expand="full" color="danger" (click)="logout()">
+    Cerrar sesión
+  </ion-button>
+  <ion-button expand="block" color="primary" routerLink="/menu">
+  Ir al Menú de APIs
+</ion-button>
+</ion-content>
